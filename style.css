@@ -3,16 +3,11 @@
     margin: 0;
     font-family: sans-serif;
 }
-
-.h-page {background-image: linear-gradient(to left ,rgb(64, 76, 170), rgb(90, 76, 170));}
-
+body {background-image: linear-gradient(to left ,rgb(64, 76, 170), rgb(90, 76, 170))}
 .h-page section{
     display: grid;
-    grid-template-columns: repeat(4, 400px);
+    grid-template-columns: repeat(4, 340px);
     text-align: center;
-    justify-content: center;
-    display: flex;
-    align-items: center;
 }
 #welcome {
     text-align: center;
@@ -42,7 +37,7 @@
 }
 .container{
     background-color: white;
-    justify-content: center;
+    justify-content: left;
     padding: 5vh;
     height: 60vh;
     margin: 80px;
@@ -59,10 +54,12 @@
 }
 .img-format{
     margin: 10px;
+    width: 200px;
     border-radius: 20px;
     box-shadow: 1px 2px 15px 0px grey;
 }
 .img-format:hover{
+    cursor: pointer;
     transform: translateY(-10%);
     transition: 0.5s;
 }
@@ -77,8 +74,55 @@
     padding: 10px;
     border: none;
 }
-
 .btn-format:hover{
     background: rgb(1, 80, 43);
+    cursor: pointer;
+}
+/* Quiz Page of HTML */
+.quiz-page{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.quiz-page section{
+    margin: 20px;
+    text-align: left;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+}
+.quiz-page h3 {
+    padding: 10px;
+    font-weight: 100;
+}
+.quiz-page hr{
+    background-color: grey;
+    height: 5px;
+    border-radius: 50px;
+    width: 800px;
+}
+.quiz-page h2{
+    padding: 10px;
+    font-weight: 300;
+}
+.row{display: inline-flex;}
+.container-question{
+    padding: 5px;
+    background-color: grey;
+    width: 100%;
+    border-radius: 20px;
+    align-items: center;
+}
+#question{
+    padding-left: 40px;
+    font-size: 20px;
+    font-weight: 100;
+}
+.quiz-page button{padding: 20px;}
+.button-response {
+    width: 100%;
+    height: auto;
+    border: none;
+    background-color: transparent;
     cursor: pointer;
 }

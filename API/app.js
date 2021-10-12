@@ -1,17 +1,24 @@
 import express from "express";
+import bodyParser from "body-parser";
 import cors from "cors";
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 const PORT = 3000;
+
+app.use(cors({
+    origin: '*'
+}));
 
 import rotas from "./routes/files.js";
 
 app.set("json spaces", 4);
 
 app.use("/quiz", rotas);
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', "*");
-})
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', "*");
+// })
 
 app.get("/", (req, res) => {
     res.send("Server is run!")

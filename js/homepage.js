@@ -1,4 +1,23 @@
-//Esse função obtêm o JSON da minha API
+// function postar (url) {
+
+//     fetch(url, {
+//         method: 'POST',
+//         body: JSON.stringify({"teste":"rrrr", "b":"77"}),
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     },)
+// };
+
+function passarValoresEntreTelas (id) {
+    sessionStorage.setItem("id", id);
+
+    location.href = "./page-info.htm";
+    console.log(id)
+}
+
+var aux = 0;
+
 function getQuizDicionario (url) {
     
     var acumulador;
@@ -6,6 +25,7 @@ function getQuizDicionario (url) {
     fetch(url)
         .then(response => response.json())
         .then(quiz => {
+            
             quiz.forEach((value, index) => {
 
                 select.innerHTML += `
@@ -15,14 +35,22 @@ function getQuizDicionario (url) {
                     <br>
                     <p>${quiz[index].description}</p>
                     <br>
-                    <button class="btn-format">Play</button>
+                    <button class="btn-format" button-id>Play</button>
                 </div>
                 `
-            });
+                var button = document.querySelector("[button-id]")
+                console.log(button);
+                button.addEventListener('click', () => {
+                    passarValoresEntreTelas(aux)
+                })
 
+                aux++;
+            });
         });
     
 }
+// sobre fetch ==> https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch
+// outra documentação ==> https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API
 
 getQuizDicionario("http://localhost:3000/quiz");
 
