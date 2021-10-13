@@ -28,6 +28,6 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
     console.log("===============")
     console.log("Welcome!")
-    console.log("url: http://localhost:3000")
+    console.log(`url: http://localhost:${PORT}`)
     console.log("===============")
 })

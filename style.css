@@ -126,3 +126,14 @@ body {background-image: linear-gradient(to left ,rgb(64, 76, 170), rgb(90, 76, 1
     background-color: transparent;
     cursor: pointer;
 }
+
+/* End page */
+.eng-p{
+    display: flex;
+    justify-content: center;
+}
+.eng-p .pontos{
+    display: flexbox;
+    justify-content: center;
+
+}

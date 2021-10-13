@@ -1,22 +1,9 @@
-// function postar (url) {
-
-//     fetch(url, {
-//         method: 'POST',
-//         body: JSON.stringify({"teste":"rrrr", "b":"77"}),
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     },)
-// };
-
 function passarValoresEntreTelas (id) {
     sessionStorage.setItem("id", id);
 
     location.href = "./page-info.htm";
     console.log(id)
 }
-
-var aux = 0;
 
 function getQuizDicionario (url) {
     
@@ -38,13 +25,14 @@ function getQuizDicionario (url) {
                     <button class="btn-format" button-id>Play</button>
                 </div>
                 `
-                var button = document.querySelector("[button-id]")
+                var button = document.querySelectorAll("[button-id]")
                 console.log(button);
-                button.addEventListener('click', () => {
-                    passarValoresEntreTelas(aux)
+                
+                button.forEach((value, index) => {
+                    value.addEventListener('click', () => {
+                        passarValoresEntreTelas(quiz[index].id)
+                    })
                 })
-
-                aux++;
             });
         });
     
