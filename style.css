@@ -135,5 +135,19 @@ body {background-image: linear-gradient(to left ,rgb(64, 76, 170), rgb(90, 76, 1
 .eng-p .pontos{
     display: flexbox;
     justify-content: center;
-
+}
+/* Usuario page */
+.u-page{
+    display: flex;
+    justify-content: center;
+}
+.u-page .container{justify-content: center;}
+.label-format{
+    font-size: 30px;
+    font-weight: bold;
+}
+.txt-format{
+    width: 230px;
+    outline: none;
+    font-size: 30px;
 }
