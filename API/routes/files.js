@@ -4,9 +4,6 @@ import { quiz } from "./quizzes.js";
 const route = express.Router();
 
 route.get("/", (req, res) => {
-
-    //Esse código resolve o problema do acesso negado da API pelo FECTH
-    res.header('Access-Control-Allow-Origin', "*");
     res.json(quiz)
 });
 
@@ -25,6 +22,11 @@ route.get("/:id", (req, res) => {
 
 route.post("/post", (req, res) => {
     const resposta = req.body;
+
+    console.log("BODY: ", resposta)
+    if ( resposta == null) {
+        return res.send("Valores nulos!")
+    }
 
     quiz.push(resposta);
 }) 
