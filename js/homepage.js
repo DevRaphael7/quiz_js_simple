@@ -1,9 +1,12 @@
-function passarValoresEntreTelas (id) {
+function passarValoresEntreTelas (id, nome) {
     sessionStorage.setItem("id", id);
+    sessionStorage.setItem("nome", nome)
 
     location.href = "./page-info.htm";
     console.log(id)
 }
+
+var nome = sessionStorage.getItem("nome") != null ? sessionStorage.getItem("nome") : "Jogador(a)"
 
 function getQuizDicionario (url) {
     
@@ -16,7 +19,7 @@ function getQuizDicionario (url) {
             quiz.forEach((value, index) => {
 
                 select.innerHTML += `
-                <div class="any-container">
+                <div class="any-container" any-container>
                     <img src="${quiz[index].imageMain}" width="200">
                     <h3>${quiz[index].title}</h3>
                     <br>
@@ -25,14 +28,22 @@ function getQuizDicionario (url) {
                     <button class="btn-format" button-id>Play</button>
                 </div>
                 `
-                var button = document.querySelectorAll("[button-id]")
-                console.log(button);
-                
-                button.forEach((value, index) => {
+                var button = document.querySelectorAll("[button-id]").forEach((value, index) => {
                     value.addEventListener('click', () => {
-                        passarValoresEntreTelas(quiz[index].id)
+                        passarValoresEntreTelas(quiz[index].id, nome)
                     })
                 })
+
+                var container = document.querySelectorAll("[any-container]").forEach((value, index) => {
+                    value.addEventListener("mouseenter", () => {
+                        document.body.style.backgroundImage = `url(${quiz[index].imageBackGround})`
+                    })
+
+                    value.addEventListener("mouseleave", () => {
+                        document.body.style.backgroundImage = `linear-gradient(to left ,rgb(64, 76, 170), rgb(90, 76, 170))`
+                    })
+                })
+
             });
         });
     
@@ -44,6 +55,4 @@ getQuizDicionario("http://localhost:3000/quiz");
 
 //Usamos QUERY SELECTOR para selecionar
 var select = document.querySelector("[selector]");
-var welcome = document.getElementById("welcome");
-
-welcome.innerText = "Bem-vindo a página de quizzes!";
+var welcome = document.getElementById("welcome").innerText = `Bem-vindo ${nome}!`;

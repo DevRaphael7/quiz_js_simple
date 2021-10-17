@@ -131,6 +131,7 @@ body {background-image: linear-gradient(to left ,rgb(64, 76, 170), rgb(90, 76, 1
 .eng-p{
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 .eng-p .pontos{
     display: flexbox;
@@ -141,13 +142,64 @@ body {background-image: linear-gradient(to left ,rgb(64, 76, 170), rgb(90, 76, 1
     display: flex;
     justify-content: center;
 }
-.u-page .container{justify-content: center;}
+.container-user{
+    background-color: white;
+    padding: 50px;
+    display: block;
+    text-align: left;
+    border-radius: 20px;
+    margin: 160px;
+}
+.welcome-text h2{
+    padding: 2px;
+    border-bottom: 2px solid grey;
+}
+.welcome-text p{
+    font-size: 16px;
+    font-weight: 100;
+    padding: 2px;
+}
+.container-user ul{padding: 0;}
+.container-user .btn-format{
+    text-align: center;
+}
+.center{
+    width: 100%;
+    text-align: center;
+}
+.btn-format{
+    text-align: center;
+}
 .label-format{
     font-size: 30px;
     font-weight: bold;
 }
+.input-name{
+    text-align: left;
+    font-size: 10px;
+}
+.input-name label{
+    font-size: 18px;
+    font-weight: normal;
+}
+.input-name ul{
+    list-style: none;
+}
 .txt-format{
-    width: 230px;
+    width: 100%;
     outline: none;
-    font-size: 30px;
+    font-size: 20px;
+    border: none none none 2px;
+    border-radius: 5;
+}
+.container-p{
+    margin: 200px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10vh;
+    display: block;
+}
+.container-p p{
+    font-size: 25px;
+    font-weight: bold;
 }

@@ -30,6 +30,10 @@ function fazerRequisicao (url) {
         .then(quiz => {
 
             if (indice == totalDeQuestao) passarValoresEntreTelas( identificador, pontuacao);
+
+            if (indice > 4) indice = 4;
+            
+            console.log("Indíce atual: ", indice)
             
             //Isso vai encontrar os dados pelo ID e me retornar um MAP
             const found = quiz.find((quiz) => quiz.id == identificador);
@@ -41,7 +45,6 @@ function fazerRequisicao (url) {
             responses[3].innerText = found.resposeFour[indice]
 
             if (resposta == found.respostaCorreta[indice - 1]) pontuacao += 200;
-
             console.log(pontuacao);
         })
 }

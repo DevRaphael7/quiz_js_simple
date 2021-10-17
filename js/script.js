@@ -24,5 +24,5 @@ fetch(`http://localhost:3000/quiz/${identificador}`)
 var button = document.getElementById("button-play")
 
 button.addEventListener('click', () => {
-    passarValoresEntreTelas(identificador);
+    passarValoresEntreTelas(identificador, nome);
 })
