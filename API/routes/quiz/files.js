@@ -20,24 +20,4 @@ route.get("/:id", (req, res) => {
     }
 });
 
-route.post("/post", (req, res) => {
-
-    //Esse código obriga o que a requisição passe o cabeçalho Authorization com o valor 123, senão será erro 401.
-    if (req.headers['authorization'] != "123") {
-        return res.status(401).send("Acesso negado!")
-    }
-
-    const resposta = req.body;
-
-    //Não permite a entrada de valores nulos
-    if ( resposta == null || resposta == {}) {
-        return res.status(400).send("Valores nulos")
-    }
-
-    console.log("BODY: ", resposta)
-
-    quiz.push(resposta);
-    return res.status(200).send("Dados postados com sucesso!")
-}) 
-
 export default route;

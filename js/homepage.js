@@ -6,22 +6,6 @@ function passarValoresEntreTelas (id, nome) {
     console.log(id)
 }
 
-function fazerPost () {
-    fetch("http://localhost:3000/quiz/post", {
-        method: 'post',
-        body: JSON.stringify({
-            nome: "Isso é um teste"
-        }),
-        headers: { //Aqui deve ser "headers" e não "header", caso contrário, ocorrerá erro e não enviará dados.
-            "Content-Type": "application/json",
-            //Esse cabeçalho é necessário para fazer requisição
-            "Authorization": "123"
-        },
-    })
-
-    console.log("Fazendo post...")
-}
-
 var nome = sessionStorage.getItem("nome") != null ? sessionStorage.getItem("nome") : "Jogador(a)"
 
 function getQuizDicionario (url) {
@@ -72,8 +56,3 @@ getQuizDicionario("http://localhost:3000/quiz");
 //Usamos QUERY SELECTOR para selecionar
 var select = document.querySelector("[selector]");
 var welcome = document.getElementById("welcome").innerText = `Bem-vindo ${nome}!`;
-
-
-var selectButton = document.getElementById("teste-b").addEventListener('click', () => {
-    fazerPost()
-});
