@@ -14,6 +14,8 @@ function fazerPost () {
         }),
         headers: { //Aqui deve ser "headers" e não "header", caso contrário, ocorrerá erro e não enviará dados.
             "Content-Type": "application/json",
+            //Esse cabeçalho é necessário para fazer requisição
+            "Authorization": "123"
         },
     })
 

@@ -8,8 +8,11 @@ app.use(bodyParser.urlencoded({extended : false }))
 app.use(bodyParser.json())
 
 app.use(cors({
-    origin: '*'
+    //Isso tira o problema de permissão para acessar API, todos as origens podem acessar minha API.
+    origin: '*',
+    methods: ['GET', 'POST'],
 }));
+
 const PORT = 3000;
 
 import rotas from "./routes/files.js";
