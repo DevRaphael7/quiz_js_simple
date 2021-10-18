@@ -14,9 +14,9 @@ route.get("/:id", (req, res) => {
     const quizEncontrado = quiz.find((quiz) => quiz.id == id);
 
     if(quizEncontrado === null ){
-        res.send("Quiz não encontrado!");
+        return res.status(400).send("quiz not found");
     }else{
-        res.send(quizEncontrado);
+        return res.status(200).send(quizEncontrado);
     }
 });
 
