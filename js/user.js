@@ -1,8 +1,8 @@
 var btn_play = document.getElementById("btn-play")
 var txt_input = document.getElementById("txt_input")
 
-function postValues (url, nome) {
-    fetch(url, {
+const postValues = async(url, nome) => {
+    var teste = await fetch(url, {
         method: 'post',
         body: JSON.stringify({
             nome: nome
@@ -15,22 +15,19 @@ function postValues (url, nome) {
     })
 
     console.log("Fazendo post...")
-}
 
-function passarValoresEntreTelas( usuarioNome ) {
-
-    if (usuarioNome == null || usuarioNome == "" || usuarioNome == " "){
-        alert("Por favor, digite alguma coisa!")
-        return
+    if(teste.status == 400){
+        alert("Campo/ ou Campos vazio!");
+        return false
     }
-
-    postValues("http://localhost:3000/usuarios/postUser", usuarioNome)
 
     sessionStorage.setItem("nome", usuarioNome);
 
     location.href = "./home-page.htm";
+
+    console.log(teste)
 }
 
 btn_play.addEventListener("click", () => {
-    passarValoresEntreTelas(txt_input.value)
+    postValues("http://localhost:3000/usuarios/postUser", usuarioNome)
 })

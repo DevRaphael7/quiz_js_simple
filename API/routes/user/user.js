@@ -29,12 +29,11 @@ route.post("/postUser", (req, res) => {
     var dict = [
         {
             id: user.find((user) => user.id == id) == undefined ? id : Math.floor(Math.random() * 200),
-            nome: user.find((user) => user.nome == req.body.nome) ? "usuário repetido" : req.body.nome
+            nome: req.body.nome
         }
     ]
 
-    //Não permite jogadores com o mesmo nome.
-    if (dict[0].nome == "usuário repetido") return res.status(400).send("existing user")
+    if (dict[0].nome == '' || dict[0].nome == null) return res.status(400).send("Campo nome vazio!")
 
     user.push(dict)
 
