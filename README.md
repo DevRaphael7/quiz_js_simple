@@ -8,34 +8,34 @@ Neste repositório crio um quiz simples com a finalidade de estudar APIs no NODE
 
 ``` json
 {
-    id: "id",
-    title: "title",
-    description: "description",
-    imageMain: "imageMain",
-    imageBackGround: "imageBackGround",
-    question: ["question"],
-    responseOne: ["responseOne"],
-    responseTwo: ["responseTwo"],
-    responseTree: ["responseTree"],
-    resposeFour: ["resposeFour"],
-    respostaCorreta: ["respostaCorreta"]
+    "id": "id",
+    "title": "title",
+    "description": "description",
+    "imageMain": "imageMain",
+    "imageBackGround": "imageBackGround",
+    "question": ["question"],
+    "responseOne": ["responseOne"],
+    "responseTwo": ["responseTwo"],
+    "responseTree": ["responseTree"],
+    "resposeFour": ["resposeFour"],
+    "respostaCorreta": ["respostaCorreta"]
 }
 ```
 
 ``` 
-    METHOD: 'GET'
+    "METHOD": 'GET'
 ```
 
 2) *user API*
 
 ``` json
 {
-    id: "id",
-    nome: "nome"
+    "id": "id",
+    "nome": "nome"
 }
 ```
 ``` json
-METHOD: ['GET', 'POST']
+"METHOD": ["GET", "POST"]
 ```
 ```` json
 HEADERS: {
